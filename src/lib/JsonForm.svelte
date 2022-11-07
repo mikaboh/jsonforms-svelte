@@ -1,22 +1,43 @@
 <script lang="ts">
-	import TextField from './components/TextField.svelte';
+	import Paper, { Title, Subtitle, Content } from '@smui/paper';
+	import Converter from './converter';
+	import { Data, DataEntry } from './data';
 
 	export let schema: any;
+	export let title: string | undefined;
+	export let subtitle: string | undefined;
 
-	let schemaArray: Array<any> = [];
-	Object.entries(schema.properties).forEach((entry) => {
-		const [key, value] = entry;
-		let entryJson = {
-			[key]: value
-		};
-		schemaArray.push(entryJson);
-	});
-	//console.log(schemaArray);
+	let converter = new Converter(schema);
+	let entries = [
+		new DataEntry('name', null),
+		new DataEntry('firstName', null),
+		new DataEntry('title', ''),
+		new DataEntry('date', null),
+		new DataEntry('matriculationNumber', null),
+		new DataEntry('textarea', '')
+	];
+	let data = new Data(entries);
 </script>
 
-<TextField label={'asd'} />
-{#each schemaArray as formElement, i}
-	{console.log(formElement.name)}
-	<h1>{formElement}</h1>
-	<TextField label={formElement.label} />
-{/each}
+<div class="paper-container">
+	<Paper>
+		{#if title}
+			<Title>{title}</Title>
+		{/if}
+		{#if subtitle}
+			<Subtitle>{subtitle}</Subtitle>
+		{/if}
+		<Content>
+			{#each converter.getFormfields as formField, i}
+				<svelte:component
+					this={formField.component}
+					{...formField}
+					bind:value={data.entries[i].value}
+				/>
+			{/each}
+		</Content>
+		{#each data.entries as entry}
+			<p>{entry.value}</p>
+		{/each}
+	</Paper>
+</div>

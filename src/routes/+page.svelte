@@ -1,17 +1,55 @@
 <script lang="ts">
-	import Ajv from 'ajv';
-	import schema from '../schema.json';
-	import JsonForm from '$lib/JsonForm.svelte';
+	import Textfield from '@smui/textfield';
+	import Icon from '@smui/textfield/icon';
+	import HelperText from '@smui/textfield/helper-text';
 
-	const ajv = new Ajv();
-	const validate = ajv.compile(schema);
-	const data = {
-		firstTextField: 'first',
-		secondTextField: 'second'
-	};
+	let focused = false;
+	let value: string | null = null;
+	let dirty = false;
+	let invalid = false;
+	$: disabled = focused || !value || !dirty || invalid;
 
-	const valid = validate(data);
-	//if (!valid) console.log(validate.errors);
+	function clickHandler() {
+		alert(`Sending to ${value}!`);
+		value = null;
+		dirty = false;
+	}
+
+	function test() {
+		alert('test2');
+	}
 </script>
 
-<JsonForm {schema} />
+<div class="margins">
+	<!--
+	  Note: when you bind to `invalid`, but you only want to
+	  monitor it instead of updating it yourself, you also
+	  should include `updateInvalid`.
+	-->
+	<Textfield
+		type="email"
+		bind:dirty
+		bind:invalid
+		updateInvalid
+		bind:value
+		label="To"
+		style="min-width: 250px;"
+		input$autocomplete="email"
+		on:input={test}
+		on:blur={() => (focused = false)}
+		withTrailingIcon={!disabled}
+	>
+		<!--
+		Since this icon is conditional, it needs to be wrapped
+		in a fragment, and we need to provide withTrailingIcon.
+	  -->
+		<svelte:fragment slot="trailingIcon">
+			{#if !disabled}
+				<Icon class="material-icons" role="button" on:click={clickHandler}>send</Icon>
+			{/if}
+		</svelte:fragment>
+		<HelperText validationMsg slot="helper">That's not a valid email address.</HelperText>
+	</Textfield>
+</div>
+
+<pre class="status">Focused: {focused}, Dirty: {dirty}, Invalid: {invalid}, Value: {value}</pre>
