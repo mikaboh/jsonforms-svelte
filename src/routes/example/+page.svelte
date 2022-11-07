@@ -3,8 +3,4 @@
 	import schema from '../../schema.json';
 </script>
 
-<JsonForm
-	title="Antrag auf Vergabe eines Studienprojektes"
-	subtitle="Hochschule Esslingen"
-	{schema}
-/>
+<JsonForm {schema} />

@@ -4,36 +4,46 @@
 	import { Data, DataEntry } from './data';
 
 	export let schema: any;
-	export let title: string | undefined;
-	export let subtitle: string | undefined;
 
 	let converter = new Converter(schema);
 	let entries = [
 		new DataEntry('name', null),
 		new DataEntry('firstName', null),
-		new DataEntry('title', ''),
-		new DataEntry('date', null),
 		new DataEntry('matriculationNumber', null),
-		new DataEntry('textarea', '')
+		new DataEntry('telephoneNumber', null),
+		new DataEntry('email', null),
+		new DataEntry('courseOfStudies', null),
+		new DataEntry('title', ''),
+		new DataEntry('firstExaminer', null),
+		new DataEntry('secondExaminer', null),
+		new DataEntry('startDate', null),
+		new DataEntry('endDate', null),
+		new DataEntry('date', null)
 	];
 	let data = new Data(entries);
 </script>
 
 <div class="paper-container">
 	<Paper>
-		{#if title}
-			<Title>{title}</Title>
+		{#if schema.title}
+			<div class="title">
+				<Title>{schema.title}</Title>
+			</div>
 		{/if}
-		{#if subtitle}
-			<Subtitle>{subtitle}</Subtitle>
+		{#if schema.subtitle}
+			<div class="subtitle">
+				<Subtitle>{schema.subtitle}</Subtitle>
+			</div>
 		{/if}
 		<Content>
 			{#each converter.getFormfields as formField, i}
-				<svelte:component
-					this={formField.component}
-					{...formField}
-					bind:value={data.entries[i].value}
-				/>
+				<div class="form-field">
+					<svelte:component
+						this={formField.component}
+						{...formField}
+						bind:value={data.entries[i].value}
+					/>
+				</div>
 			{/each}
 		</Content>
 		{#each data.entries as entry}
@@ -41,3 +51,12 @@
 		{/each}
 	</Paper>
 </div>
+
+<style>
+	.subtitle {
+		margin-bottom: 20px;
+	}
+	.form-field {
+		margin-bottom: 20px;
+	}
+</style>

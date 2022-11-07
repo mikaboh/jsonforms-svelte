@@ -1,12 +1,66 @@
 {
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
+    "title": "Antrag auf Vergabe eines Studienprojektes",
+    "subtitle": "Hochschule Esslingen",
+    "fields": [
+        {
+            "key": "name",
+            "label": "Name",
+            "type": "text"
         },
-        "lastName": {
-            "type": "string"
+        {
+            "key": "firstName",
+            "label": "Vorname",
+            "type": "text"
+        },
+        {
+            "key": "matriculationNumber",
+            "label": "Matrikelnummer",
+            "type": "number"
+        },
+        {
+            "key": "telephoneNumber",
+            "label": "Telefon",
+            "type": "number"
+        },
+        {
+            "key": "email",
+            "label": "E-Mail",
+            "type": "email"
+        },
+        {
+            "key": "courseOfStudies",
+            "label": "Studiengang",
+            "type": "text"
+        },
+        {
+            "key": "title",
+            "label": "Titel der Studienarbeit",
+            "type": "textarea"
+        },
+        {
+            "key": "firstExaminer",
+            "label": "1. Prüfer",
+            "type": "text"
+        },
+        {
+            "key": "secondExaminer",
+            "label": "2. Prüfer",
+            "type": "text"
+        },
+        {
+            "key": "startDate",
+            "label": "Beginn der Studienarbeit",
+            "type": "date"
+        },
+        {
+            "key": "endDate",
+            "label": "Abgabetermin",
+            "type": "date"
+        },
+        {
+            "key": "date",
+            "label": "Datum",
+            "type": "date"
         }
-    },
-    "additionalProperties": false
+    ]
 }

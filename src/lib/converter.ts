@@ -9,57 +9,80 @@ class Converter {
         this.formFields = this.convertSchemaToFormFields(schema);
     }
 
+    private camelCaseToLabel(camelCase: string): string {
+        let result = camelCase.replace(/([A-Z])/g, " $1");
+        result = result.charAt(0).toUpperCase() + result.slice(1);
+
+        return result;
+    }
+
     private convertSchemaToFormFields(schema: any): Array<any> {
-        Object.entries(schema.properties).forEach(([key, value]) => {
-        })
+        let formFields: Array<any> = [];
+        schema.fields.forEach((field: any) => {
+            let formItem: any = {
+                key: field.key,
+                label: field.label || this.camelCaseToLabel(field.key),
+                style: "width: 100%;"
+            };
 
-        let formFields: Array<any> = [
+            switch (field.type) {
+                // text type specific properties
+                case "text": {
+                    formItem = {
+                        ...formItem,
+                        type: "text",
+                        input$maxlength: field.maxLength || undefined,
+                        component: Textfield,
+                        variant: field.variant || "outlined"
+                    }
+                    break;
+                }
+                case "textarea": {
+                    formItem = {
+                        ...formItem,
+                        type: "text",
+                        textarea: true,
+                        input$maxlength: field.maxLength || undefined,
+                        component: Textfield
+                    }
+                    break;
+                }
+                case "number": {
+                    formItem = {
+                        ...formItem,
+                        type: "number",
+                        component: Textfield,
+                        variant: field.variant || "outlined"
+                    }
+                    break;
+                }
+                case "email": {
+                    formItem = {
+                        ...formItem,
+                        type: "email",
+                        input$autocomplete: "email",
+                        input$maxlength: field.maxLength || undefined,
+                        component: Textfield,
+                        variant: field.variant || "outlined"
+                    }
+                    break;
+                }
+                case "date": {
+                    formItem = {
+                        ...formItem,
+                        type: "date",
+                        component: Textfield,
+                        variant: field.variant || "outlined"
+                    }
+                    break;
+                }
+                // TODO: implement other field types like checkbox, radio, menu, etc.
+            }
 
-        ];
+            formFields.push(formItem);
+        });
 
-        return [
-            {
-                key: 'name',
-                label: 'Name',
-                style: "width: 100%",
-                component: Textfield,
-                maxLength: 5,
-            },
-            {
-                key: 'firstName',
-                label: 'Vorname',
-                style: "width: 100%",
-                component: Textfield
-            },
-            {
-                key: 'title',
-                label: 'Titel',
-                style: "width: 100%",
-                textarea: true,
-                component: Textfield
-            },
-            {
-                key: 'date',
-                label: 'Datum',
-                style: "width: 100%",
-                type: "date",
-                component: Textfield
-            },
-            {
-                key: 'matriculationNumber',
-                label: 'Matrikelnummer',
-                style: "width: 100%",
-                type: "number",
-                component: Textfield
-            },
-            {
-                key: 'textarea',
-                label: 'Area',
-                textarea: true,
-                style: "width: 100%",
-                component: Textfield
-            },
-        ];
+        return formFields;
     }
 
     get getFormfields() {
