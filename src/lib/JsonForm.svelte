@@ -2,7 +2,9 @@
 	import Paper, { Title, Subtitle, Content } from '@smui/paper';
 	import Converter from './converter';
 	import { Data, DataEntry } from './data';
-	import JSONTree from 'svelte-json-tree';
+	import HelperText from '@smui/textfield/helper-text';
+	import CharacterCounter from '@smui/textfield/character-counter';
+	import Icon from '@smui/textfield/icon';
 
 	export let schema: any;
 
@@ -32,6 +34,8 @@
 	$: {
 		data = dataInstance.toJson();
 	}
+
+	console.log(converter.getFormfields);
 </script>
 
 <Paper>
@@ -51,8 +55,25 @@
 				<svelte:component
 					this={formField.component}
 					{...formField}
+					withLeadingIcon={formField.leadingIcon !== undefined}
 					bind:value={dataInstance.entries[i].value}
-				/>
+					bind:invalid={formField.invalid}
+					updateInvalid
+					bind:dirty={formField.dirty}
+				>
+					<svelte:fragment slot="leadingIcon">
+						{#if formField.leadingIcon}
+							<Icon class="material-icons">{formField.leadingIcon}</Icon>
+						{/if}
+					</svelte:fragment>
+
+					<svelte:fragment slot="helper">
+						<HelperText validationMsg>{formField.validationMsg}</HelperText>
+						{#if formField.input$maxlength}
+							<CharacterCounter>0 / {formField.input$maxlength}</CharacterCounter>
+						{/if}
+					</svelte:fragment>
+				</svelte:component>
 			</div>
 		{/each}
 	</Content>

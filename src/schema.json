@@ -5,12 +5,16 @@
         {
             "key": "name",
             "label": "Name",
-            "type": "text"
+            "type": "text",
+            "required": true,
+            "maxLength": 10,
+            "icon": "person"
         },
         {
             "key": "firstName",
             "label": "Vorname",
-            "type": "text"
+            "type": "text",
+            "icon": "person"
         },
         {
             "key": "matriculationNumber",
@@ -25,7 +29,9 @@
         {
             "key": "email",
             "label": "E-Mail",
-            "type": "email"
+            "type": "email",
+            "validationMsg": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+            "icon": "event"
         },
         {
             "key": "courseOfStudies",

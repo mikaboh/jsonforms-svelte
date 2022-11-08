@@ -32,9 +32,10 @@ class Converter {
                     formItem = {
                         ...formItem,
                         type: "text",
-                        input$maxlength: field.maxLength || undefined,
+                        ...(field.maxLength && { input$maxlength: field.maxLength }),
                         component: Textfield,
-                        variant: field.variant || "outlined"
+                        variant: field.variant || "outlined",
+                        ...(field.icon && { leadingIcon: field.icon }),
                     }
                     break;
                 }
@@ -44,8 +45,8 @@ class Converter {
                         ...formItem,
                         type: "text",
                         textarea: true,
-                        input$maxlength: field.maxLength || undefined,
-                        component: Textfield
+                        ...(field.maxLength && { input$maxlength: field.maxLength }),
+                        component: Textfield,
                     }
                     break;
                 }
@@ -55,7 +56,8 @@ class Converter {
                         ...formItem,
                         type: "number",
                         component: Textfield,
-                        variant: field.variant || "outlined"
+                        variant: field.variant || "outlined",
+                        ...(field.icon && { leadingIcon: field.icon }),
                     }
                     break;
                 }
@@ -65,9 +67,10 @@ class Converter {
                         ...formItem,
                         type: "email",
                         input$autocomplete: "email",
-                        input$maxlength: field.maxLength || undefined,
+                        ...(field.maxLength && { input$maxlength: field.maxLength }),
                         component: Textfield,
-                        variant: field.variant || "outlined"
+                        variant: field.variant || "outlined",
+                        ...(field.icon && { leadingIcon: field.icon }),
                     }
                     break;
                 }
@@ -77,11 +80,21 @@ class Converter {
                         ...formItem,
                         type: "date",
                         component: Textfield,
-                        variant: field.variant || "outlined"
+                        variant: field.variant || "outlined",
+                        ...(field.icon && { leadingIcon: field.icon }),
                     }
                     break;
                 }
                 // TODO: implement other field types like checkbox, radio, menu, etc.
+            }
+
+            // Texfield specific properties
+            if (formItem.component === Textfield) {
+                formItem = {
+                    ...formItem,
+                    required: field.required || false,
+                    validationMsg: field.validationMsg || "This field is invalid",
+                }
             }
 
             formFields.push(formItem);
