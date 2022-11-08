@@ -19,10 +19,11 @@ class Converter {
     private convertSchemaToFormFields(schema: any): Array<any> {
         let formFields: Array<any> = [];
         schema.fields.forEach((field: any) => {
+            // applies to all fields
             let formItem: any = {
                 key: field.key,
                 label: field.label || this.camelCaseToLabel(field.key),
-                style: "width: 100%;"
+                style: "width: 100%;",
             };
 
             switch (field.type) {
@@ -37,6 +38,7 @@ class Converter {
                     }
                     break;
                 }
+                // textarea type specific properties
                 case "textarea": {
                     formItem = {
                         ...formItem,
@@ -47,6 +49,7 @@ class Converter {
                     }
                     break;
                 }
+                // number type specific properties
                 case "number": {
                     formItem = {
                         ...formItem,
@@ -56,6 +59,7 @@ class Converter {
                     }
                     break;
                 }
+                // email type specific properties
                 case "email": {
                     formItem = {
                         ...formItem,
@@ -67,6 +71,7 @@ class Converter {
                     }
                     break;
                 }
+                // date type specific properties
                 case "date": {
                     formItem = {
                         ...formItem,
