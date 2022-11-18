@@ -11,7 +11,8 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"prepare": "npm run smui-theme-light && npm run smui-theme-dark",
 		"smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
-		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
+		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark",
+		"docs": "docsify serve docs"
 	},
 	"devDependencies": {
 		"@smui-extra/autocomplete": "^7.0.0-beta.0",

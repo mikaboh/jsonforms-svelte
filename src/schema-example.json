@@ -1,0 +1,29 @@
+{
+    "title": "Example Form",
+    "subtitle": "This is a simple example of a form",
+    "fields": [
+        {
+            "key": "firstName",
+            "type": "text",
+            "maxLength": 20
+        },
+        {
+            "key": "lastName",
+            "label": "Last Name",
+            "type": "text"
+        },
+        {
+            "key": "email",
+            "type": "email"
+        },
+        {
+            "key": "age",
+            "type": "number",
+            "required": true
+        },
+        {
+            "key": "dateOfBirth",
+            "type": "date"
+        }
+    ]
+}
