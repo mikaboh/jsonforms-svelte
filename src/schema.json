@@ -4,13 +4,13 @@
     "fields": [
         {
             "key": "text",
-            "label": "Some label",
+            "label": "Some text label",
             "type": "text",
             "leadingIcon": "person"
         },
         {
             "key": "number",
-            "label": "Some number",
+            "label": "Some number label",
             "type": "number"
         },
         {
