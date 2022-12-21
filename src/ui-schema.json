@@ -6,11 +6,11 @@
             "elements": [
                 {
                     "type": "Control",
-                    "key": "name"
+                    "key": "text"
                 },
                 {
                     "type": "Control",
-                    "key": "firstName"
+                    "key": "number"
                 }
             ]
         },
@@ -19,73 +19,41 @@
             "elements": [
                 {
                     "type": "Control",
-                    "key": "matriculationNumber"
-                },
-                {
-                    "type": "Control",
-                    "key": "telephoneNumber"
-                },
-                {
-                    "type": "Control",
                     "key": "email"
+                },
+                {
+                    "type": "Control",
+                    "key": "date"
                 }
             ]
         },
         {
             "type": "Control",
-            "key": "courseOfStudies"
+            "key": "textarea"
         },
         {
             "type": "Control",
-            "key": "title"
+            "key": "html"
         },
         {
             "type": "Control",
-            "key": "firstExaminer"
+            "key": "radioGroup"
         },
         {
             "type": "Control",
-            "key": "secondExaminer"
+            "key": "autocomplete"
         },
         {
             "type": "Control",
-            "key": "startDate"
+            "key": "singleCheckbox"
         },
         {
             "type": "Control",
-            "key": "endDate"
+            "key": "checkboxGroup"
         },
         {
             "type": "Control",
-            "key": "date"
-        },
-        {
-            "type": "Control",
-            "key": "radioQuestion"
-        },
-        {
-            "type": "Control",
-            "key": "radioField"
-        },
-        {
-            "type": "Control",
-            "key": "autocompleteField"
-        },
-        {
-            "type": "Control",
-            "key": "checkboxQuestion"
-        },
-        {
-            "type": "Control",
-            "key": "checkboxGroupQuestion"
-        },
-        {
-            "type": "Control",
-            "key": "checkboxGroupField"
-        },
-        {
-            "type": "Control",
-            "key": "selectField"
+            "key": "select"
         }
     ]
 }

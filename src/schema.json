@@ -1,79 +1,38 @@
 {
-    "title": "Antrag auf Vergabe eines Studienprojektes",
-    "subtitle": "Hochschule Esslingen",
+    "title": "Some title",
+    "subtitle": "Some subtitle",
     "fields": [
         {
-            "key": "name",
-            "label": "Name",
-            "type": "text",
-            "maxLength": 10,
-            "leadingIcon": "person"
-        },
-        {
-            "key": "firstName",
-            "label": "Vorname",
+            "key": "text",
+            "label": "Some label",
             "type": "text",
             "leadingIcon": "person"
         },
         {
-            "key": "matriculationNumber",
-            "label": "Matrikelnummer",
-            "type": "number"
-        },
-        {
-            "key": "telephoneNumber",
-            "label": "Telefon",
+            "key": "number",
+            "label": "Some number",
             "type": "number"
         },
         {
             "key": "email",
-            "label": "E-Mail",
             "type": "email",
-            "validationMsg": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
-            "icon": "event"
-        },
-        {
-            "key": "courseOfStudies",
-            "label": "Studiengang",
-            "type": "text"
-        },
-        {
-            "key": "title",
-            "label": "Titel der Studienarbeit",
-            "type": "textarea"
-        },
-        {
-            "key": "firstExaminer",
-            "label": "1. Prüfer",
-            "type": "text"
-        },
-        {
-            "key": "secondExaminer",
-            "label": "2. Prüfer",
-            "type": "text"
-        },
-        {
-            "key": "startDate",
-            "label": "Beginn der Studienarbeit",
-            "type": "date"
-        },
-        {
-            "key": "endDate",
-            "label": "Abgabetermin",
-            "type": "date"
+            "validationMsg": "Please provide a valid email"
         },
         {
             "key": "date",
-            "label": "Datum",
             "type": "date"
         },
         {
-            "type": "html",
-            "key": "radioQuestion",
-            "html": "<p>Radio question</p>"
+            "key": "textarea",
+            "type": "textarea"
         },
         {
-            "key": "radioField",
+            "key": "html",
+            "type": "html",
+            "html": "<p>Some html</p>"
+        },
+        {
+            "key": "radioGroup",
             "type": "radio",
             "options": [
                 {
@@ -89,7 +48,7 @@
             ]
         },
         {
-            "key": "autocompleteField",
+            "key": "autocomplete",
             "type": "autocomplete",
             "options": [
                 "autocomplete option 1",
@@ -99,22 +58,11 @@
             "value": "autocomplete option 2"
         },
         {
-            "type": "html",
-            "key": "checkboxQuestion",
-            "html": "<p>Checkbox question</p>"
+            "key": "singleCheckbox",
+            "type": "checkbox"
         },
         {
-            "key": "checkboxField",
-            "type": "checkbox",
-            "disabled": true
-        },
-        {
-            "type": "html",
-            "key": "checkboxGroupQuestion",
-            "html": "<p>Checkbox group question</p>"
-        },
-        {
-            "key": "checkboxGroupField",
+            "key": "checkboxGroup",
             "type": "checkbox",
             "options": [
                 {
@@ -130,7 +78,7 @@
             ]
         },
         {
-            "key": "selectField",
+            "key": "select",
             "type": "select",
             "options": [
                 "select option 1",

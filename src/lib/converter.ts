@@ -23,7 +23,6 @@ class Converter {
                 return;
             }
 
-
             // applies to all input fields
             let formItem: any = {
                 key: field.key,
@@ -49,7 +48,7 @@ class Converter {
                         textarea: true,
                         ...(field.input$maxLength && { input$maxLength: field.input$maxLength }),
                         ...(field.required && { required: field.required }),
-                        ...(field.disabled && { disabled: field.disabled })
+                        ...(field.disabled && { disabled: field.disabled }),
                     }
                     break;
                 }
