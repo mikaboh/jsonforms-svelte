@@ -1,0 +1,142 @@
+{
+    "title": "Antrag auf Vergabe eines Studienprojektes",
+    "subtitle": "Hochschule Esslingen",
+    "fields": [
+        {
+            "key": "name",
+            "label": "Name",
+            "type": "text",
+            "maxLength": 10,
+            "leadingIcon": "person"
+        },
+        {
+            "key": "firstName",
+            "label": "Vorname",
+            "type": "text",
+            "leadingIcon": "person"
+        },
+        {
+            "key": "matriculationNumber",
+            "label": "Matrikelnummer",
+            "type": "number"
+        },
+        {
+            "key": "telephoneNumber",
+            "label": "Telefon",
+            "type": "number"
+        },
+        {
+            "key": "email",
+            "label": "E-Mail",
+            "type": "email",
+            "validationMsg": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+            "icon": "event"
+        },
+        {
+            "key": "courseOfStudies",
+            "label": "Studiengang",
+            "type": "text"
+        },
+        {
+            "key": "title",
+            "label": "Titel der Studienarbeit",
+            "type": "textarea"
+        },
+        {
+            "key": "firstExaminer",
+            "label": "1. Prüfer",
+            "type": "text"
+        },
+        {
+            "key": "secondExaminer",
+            "label": "2. Prüfer",
+            "type": "text"
+        },
+        {
+            "key": "startDate",
+            "label": "Beginn der Studienarbeit",
+            "type": "date"
+        },
+        {
+            "key": "endDate",
+            "label": "Abgabetermin",
+            "type": "date"
+        },
+        {
+            "key": "date",
+            "label": "Datum",
+            "type": "date"
+        },
+        {
+            "type": "html",
+            "key": "radioQuestion",
+            "html": "<p>Radio question</p>"
+        },
+        {
+            "key": "radioField",
+            "type": "radio",
+            "options": [
+                {
+                    "name": "radio option 1",
+                    "disabled": true
+                },
+                {
+                    "name": "radio option 2"
+                },
+                {
+                    "name": "radio option 3"
+                }
+            ]
+        },
+        {
+            "key": "autocompleteField",
+            "type": "autocomplete",
+            "options": [
+                "autocomplete option 1",
+                "autocomplete option 2",
+                "autocomplete option 3"
+            ],
+            "value": "autocomplete option 2"
+        },
+        {
+            "type": "html",
+            "key": "checkboxQuestion",
+            "html": "<p>Checkbox question</p>"
+        },
+        {
+            "key": "checkboxField",
+            "type": "checkbox",
+            "disabled": true
+        },
+        {
+            "type": "html",
+            "key": "checkboxGroupQuestion",
+            "html": "<p>Checkbox group question</p>"
+        },
+        {
+            "key": "checkboxGroupField",
+            "type": "checkbox",
+            "options": [
+                {
+                    "name": "checkbox option 1",
+                    "disabled": true
+                },
+                {
+                    "name": "checkbox option 2"
+                },
+                {
+                    "name": "checkbox option 3"
+                }
+            ]
+        },
+        {
+            "key": "selectField",
+            "type": "select",
+            "options": [
+                "select option 1",
+                "select option 2",
+                "select option 3"
+            ]
+        }
+    ]
+}

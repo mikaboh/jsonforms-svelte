@@ -1,0 +1,39 @@
+{
+    "type": "VerticalLayout",
+    "elements": [
+        {
+            "type": "HorizontalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "key": "firstName"
+                },
+                {
+                    "type": "Control",
+                    "key": "lastName"
+                },
+                {
+                    "type": "Control",
+                    "key": "email"
+                }
+            ]
+        },
+        {
+            "type": "Control",
+            "key": "htmlQuestion"
+        },
+        {
+            "type": "HorizontalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "key": "age"
+                },
+                {
+                    "type": "Control",
+                    "key": "dateOfBirth"
+                }
+            ]
+        }
+    ]
+}

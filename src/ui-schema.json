@@ -1,0 +1,91 @@
+{
+    "type": "VerticalLayout",
+    "elements": [
+        {
+            "type": "HorizontalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "key": "name"
+                },
+                {
+                    "type": "Control",
+                    "key": "firstName"
+                }
+            ]
+        },
+        {
+            "type": "HorizontalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "key": "matriculationNumber"
+                },
+                {
+                    "type": "Control",
+                    "key": "telephoneNumber"
+                },
+                {
+                    "type": "Control",
+                    "key": "email"
+                }
+            ]
+        },
+        {
+            "type": "Control",
+            "key": "courseOfStudies"
+        },
+        {
+            "type": "Control",
+            "key": "title"
+        },
+        {
+            "type": "Control",
+            "key": "firstExaminer"
+        },
+        {
+            "type": "Control",
+            "key": "secondExaminer"
+        },
+        {
+            "type": "Control",
+            "key": "startDate"
+        },
+        {
+            "type": "Control",
+            "key": "endDate"
+        },
+        {
+            "type": "Control",
+            "key": "date"
+        },
+        {
+            "type": "Control",
+            "key": "radioQuestion"
+        },
+        {
+            "type": "Control",
+            "key": "radioField"
+        },
+        {
+            "type": "Control",
+            "key": "autocompleteField"
+        },
+        {
+            "type": "Control",
+            "key": "checkboxQuestion"
+        },
+        {
+            "type": "Control",
+            "key": "checkboxGroupQuestion"
+        },
+        {
+            "type": "Control",
+            "key": "checkboxGroupField"
+        },
+        {
+            "type": "Control",
+            "key": "selectField"
+        }
+    ]
+}
