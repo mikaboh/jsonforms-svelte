@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Paper, { Title, Subtitle, Content } from '@smui/paper/src/index.js';
+	import Paper, { Title, Subtitle, Content } from '@smui/paper';
+	//import Paper, { Title, Subtitle, Content } from '@smui/paper/src/index.js';
 	import Converter from './converter.js';
 	import UIConverter from './ui-converter.js';
 	import { Data } from './data.js';
@@ -7,10 +8,14 @@
 	import CharacterCounter from '@smui/textfield/character-counter';
 	import Icon from '@smui/textfield/icon';
 	import Textfield from '@smui/textfield';
-	import Radio from '@smui/radio/src/index.js';
+	import Radio from '@smui/radio';
+	import FormField from '@smui/form-field';
+	import Autocomplete from '@smui-extra/autocomplete';
+	import Checkbox from '@smui/checkbox';
+	/*import Radio from '@smui/radio/src/index.js';
 	import FormField from '@smui/form-field/src/index.js';
 	import Autocomplete from '@smui-extra/autocomplete/src/index.js';
-	import Checkbox from '@smui/checkbox/src/index.js';
+	import Checkbox from '@smui/checkbox/src/index.js';*/
 	import Select, { Option } from '@smui/select';
 
 	export let schema: any;
@@ -155,13 +160,13 @@
 	</Content>
 </Paper>
 
-<style global>
-	@import './css/smui.css';
+<style>
+	@import './css/_smui.css';
 	@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 	@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700';
 	@import 'https://fonts.googleapis.com/css?family=Roboto+Mono';
 	/* TODO: handle dark mode */
-	/*@import '../../static/smui-dark.css';*/
+	/*@import '../../static/_smui-dark.css';*/
 
 	.subtitle {
 		margin-bottom: 20px;
