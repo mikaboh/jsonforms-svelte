@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Paper, { Title, Subtitle, Content } from '@smui/paper';
+	import Paper, { Title, Subtitle, Content } from '@smui/paper/src/index.js';
 	import Converter from './converter.js';
 	import UIConverter from './ui-converter.js';
-	import { Data, DataEntry } from './data.js';
+	import { Data } from './data.js';
 	import HelperText from '@smui/textfield/helper-text';
 	import CharacterCounter from '@smui/textfield/character-counter';
 	import Icon from '@smui/textfield/icon';
 	import Textfield from '@smui/textfield';
-	import Radio from '@smui/radio';
-	import FormField from '@smui/form-field';
-	import Autocomplete from '@smui-extra/autocomplete';
-	import Checkbox from '@smui/checkbox';
+	import Radio from '@smui/radio/src/index.js';
+	import FormField from '@smui/form-field/src/index.js';
+	import Autocomplete from '@smui-extra/autocomplete/src/index.js';
+	import Checkbox from '@smui/checkbox/src/index.js';
 	import Select, { Option } from '@smui/select';
 
 	export let schema: any;

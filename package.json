@@ -1,6 +1,6 @@
 {
-	"name": "jsonforms-svelte",
-	"version": "1.0.5",
+	"name": "jsonforms-svelte-test",
+	"version": "1.0.6",
 	"description": "Generate svelte forms from a JSON schema.",
 	"keywords": [
 		"jsonforms",
