@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Paper, { Title, Subtitle, Content } from '@smui/paper';
-	//import Paper, { Title, Subtitle, Content } from '@smui/paper/src/index.js';
 	import Converter from './converter.js';
 	import UIConverter from './ui-converter.js';
 	import { Data } from './data.js';
@@ -12,10 +11,6 @@
 	import FormField from '@smui/form-field';
 	import Autocomplete from '@smui-extra/autocomplete';
 	import Checkbox from '@smui/checkbox';
-	/*import Radio from '@smui/radio/src/index.js';
-	import FormField from '@smui/form-field/src/index.js';
-	import Autocomplete from '@smui-extra/autocomplete/src/index.js';
-	import Checkbox from '@smui/checkbox/src/index.js';*/
 	import Select, { Option } from '@smui/select';
 
 	export let schema: any;
@@ -148,7 +143,7 @@
 							key={(value) => `${value == null ? '' : value}`}
 							bind:value={dataInstance.entries[formField.dataIndex].value}
 						>
-							<Option value={null} />
+							<Option value={undefined} />
 							{#each formField.options as option}
 								<Option value={option}>{option}</Option>
 							{/each}
@@ -160,7 +155,7 @@
 	</Content>
 </Paper>
 
-<style>
+<style lang="scss" global>
 	@import './css/_smui.css';
 	@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 	@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700';

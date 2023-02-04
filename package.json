@@ -1,6 +1,6 @@
 {
 	"name": "jsonforms-svelte-test",
-	"version": "1.0.7",
+	"version": "1.0.10",
 	"description": "Generate svelte forms from a JSON schema.",
 	"keywords": [
 		"jsonforms",
@@ -59,14 +59,19 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"jsonforms-svelte": "^1.0.6",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"smui-theme": "^7.0.0-beta.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^2.9.2",
 		"tslib": "^2.4.1",
-		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"devDependencies": {
+		"sass": "^1.58.0",
+		"svelte-preprocess": "^5.0.1",
+		"typescript": "^4.9.5"
+	}
 }

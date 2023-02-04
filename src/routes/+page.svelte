@@ -1,7 +1,5 @@
 <script lang="ts">
-	import JsonForm from 'jsonforms-svelte-test';
-	//import JsonForm from '$lib/index.js';
-	//import JsonForm from 'jsonforms-svelte-test';
+	import JsonForm from 'jsonforms-svelte';
 	import Paper, { Content, Title } from '@smui/paper';
 	import schema from '../schema.json';
 	import uischema from '../ui-schema.json';
